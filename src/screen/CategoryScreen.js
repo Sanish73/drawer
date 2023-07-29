@@ -19,12 +19,14 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import HomeSearchBox from '../components/HomeSearchBox';
 
 
 export function CategoryScreen() {
     return (
         <VStack>
-            <Text>This is Category</Text>
+         <HomeSearchBox/>
+          
         </VStack>
     )
 }

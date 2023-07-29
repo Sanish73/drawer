@@ -1,35 +1,40 @@
-import React from 'react';
-import {
-    Text,
-    Box,
-    VStack,
-    Center,
-    HStack,
-    Button,
-    Heading,
-    useColorMode,
-    Input
-} from 'native-base';
-import {
-    View,
-    StyleSheet,
-    Alert,
-    ScrollView,
-    FlatList,
-    Image,
-    TouchableOpacity
-} from 'react-native';
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { AppRegistry } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons';
+function Feed() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Feed Screen</Text>
+    </View>
+  );
+}
 
+function Article() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Article Screen</Text>
+    </View>
+  );
+}
 
-export   function HomeScreen() {
-    return (
-        <VStack>
-            <Text>This is Home </Text>
-            <VStack>
-            <Icon name="home"  size={24} color='#000' />
-            </VStack>
-        </VStack>
-    )
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator useLegacyImplementation>
+      <Drawer.Screen name="Feed" component={Feed} />
+      <Drawer.Screen name="Article" component={Article} />
+    </Drawer.Navigator>
+  );
+}
+
+export  function HomeScreen() {
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
 }
