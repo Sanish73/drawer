@@ -22,7 +22,7 @@ import {
 import {COLORS} from '../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function HomeSearchBox() {
+export default function SearchBox() {
     return (
         <HStack paddingY={2} paddingX={5} >
             <Box    justifyContent={'center'}   flex={1}>
