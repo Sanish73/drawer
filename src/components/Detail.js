@@ -1,39 +1,32 @@
 import React from 'react';
 import {View, Text, Box, VStack, HStack} from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const TopHeading = () => {
     return (
         <HStack p={3} alignItems="center" justifyContent="space-between">
-            <VStack>
-                <Text fontSize="xl" fontWeight="bold">
-                    Holly Flax
-                </Text>
-                <Text>Project Number: 46546465456</Text>
-            </VStack>
-
-            <Box
-        borderWidth={1}
-        borderColor="brown"
-        borderRadius={5}
-        bgColor={'blue.100'}
-        p={3}
-        width={9}
-        height={9}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Text
-          style={{
-            fontSize:10
-          }}
-          fontWeight="bold"
-        //   textAlign="center" // Center the text horizontally
-        //   lineHeight={9} // Center the text vertically
+        <VStack>
+          <Text fontSize="xl" fontWeight="bold" marginBottom={1}>
+            Holly Flax
+          </Text>
+          <Text color="#8D8D8D">Project Number: 46546465456</Text>
+        </VStack>
+  
+        <Box
+          borderWidth={1}
+          borderColor="#E3E3E3"
+          borderRadius={6}
+          bgColor="#F1F1F1"
+          p={3}
+          width={10}
+          height={10}
+          alignItems="center"
+          justifyContent="center"
         >
-          :
-        </Text>
-      </Box>
-        </HStack>
+           {/* Use the Icon component from react-native-vector-icons */}
+        <Icon name="ellipsis-vertical" size={14} color="black" />
+        </Box>
+      </HStack>
     );
 };
 
@@ -42,8 +35,8 @@ const Detail = () => {
         <Box
             mx={3}
             my={2}
-            borderWidth={1}
-            borderColor="brown"
+            borderWidth={2}
+            borderColor="#E3E3E3"
             borderRadius={5}
             bg="white">
             <TopHeading/>
