@@ -19,13 +19,16 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
-
+import MyTab from '../components/MyTab';
 import SearchBox from '../components/SearchBox';
+import Detail from '../components/Detail';
 
 export function CategoryScreen() {
     return (
         <VStack>
          <SearchBox/>
+         <MyTab/>
+         <Detail/>
           
         </VStack>
     )
