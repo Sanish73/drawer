@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Box, VStack, HStack} from 'native-base';
+import {View, Text, Box, VStack, HStack, ScrollView} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AddressSection from './AddressSection';
 import LevelColumn1 from './LevelColumn1';
@@ -32,8 +32,8 @@ const TopHeading = ({CustomerName, CustomerId}) => {
 
 const ContactDetails = ({PhoneNumber, EmailAddress}) => {
     return (
-        <HStack  maxH={'45px'} w={'88%'} >
-            <HStack w={'30%'}  marginRight={12}>
+        <HStack maxH={'45px'} w={'88%'}>
+            <HStack w={'30%'} marginRight={12}>
                 <Box marginRight={2}>
                     <Icon name="call" size={14} color="#8D8D8D"/>
                 </Box>
@@ -44,7 +44,7 @@ const ContactDetails = ({PhoneNumber, EmailAddress}) => {
 
                 </Box>
             </HStack>
-            <HStack   w={'70%'} >
+            <HStack w={'70%'}>
                 <Box marginRight={2} w={'8%'}>
                     <Icon name="mail" size={14} color="#8D8D8D"/>
                 </Box>
@@ -61,6 +61,7 @@ const ContactDetails = ({PhoneNumber, EmailAddress}) => {
 
 const Detail = () => {
     return (
+      
         <Box
             p={3}
             mx={3}
@@ -74,11 +75,23 @@ const Detail = () => {
             <ContactDetails
                 PhoneNumber={'9844554622'}
                 EmailAddress={'thapasanish75@gmail.com'}/>
-            
-            <AddressSection Location1={'415 Washington AVE nepal,'} Location2={'kathmandu ,Nepal'}/>
 
-            <LevelColumn1 />
+            <AddressSection
+                Location1={'415 Washington AVE nepal,'}
+                Location2={'kathmandu ,Nepal'}/>
+
+            <LevelColumn1
+                TypeName={'Projected Type'}
+                TypeData={'Bathroom,Modeling'}
+                RevenueName={'Est Revenue'}
+                Total={'$125,654,00.000'}/>
+            <LevelColumn1
+                TypeName={'Projected Type'}
+                TypeData={'Bathroom,Modeling'}
+                RevenueName={'Est Revenue'}
+                Total={'$125,654,00.000'}/>
         </Box>
+       
     );
 };
 

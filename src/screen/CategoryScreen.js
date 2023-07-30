@@ -26,10 +26,12 @@ import Detail from '../components/Detail';
 export function CategoryScreen() {
     return (
         <VStack>
-         <SearchBox/>
-         <MyTab/>
-         <Detail/>
-          
+           
+                <SearchBox/>
+                <MyTab/>
+                <Detail/>
+       
+
         </VStack>
     )
 }
