@@ -25,7 +25,7 @@ import { Avatar } from "native-base";
 
 export default function SearchBox() {
     return (
-        <HStack  bgColor={'red.100'} paddingY={2} paddingX={5} >
+        <HStack paddingY={2} paddingX={5} >
             <Box    justifyContent={'center'}   flex={1}>
                 <Icon name="grid-outline" size={25} color="black"/>
             </Box>

@@ -1,45 +1,83 @@
 import React from 'react';
 import {View, Text, Box, VStack, HStack} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
+import AddressSection from './AddressSection';
+import LevelColumn1 from './LevelColumn1';
 
-const TopHeading = () => {
+const TopHeading = ({CustomerName, CustomerId}) => {
     return (
-        <HStack p={3} alignItems="center" justifyContent="space-between">
-        <VStack>
-          <Text fontSize="xl" fontWeight="bold" marginBottom={1}>
-            Holly Flax
-          </Text>
-          <Text color="#8D8D8D">Project Number: 46546465456</Text>
-        </VStack>
-  
-        <Box
-          borderWidth={1}
-          borderColor="#E3E3E3"
-          borderRadius={6}
-          bgColor="#F1F1F1"
-          p={3}
-          width={10}
-          height={10}
-          alignItems="center"
-          justifyContent="center"
-        >
-           {/* Use the Icon component from react-native-vector-icons */}
-        <Icon name="ellipsis-vertical" size={14} color="black" />
-        </Box>
-      </HStack>
+        <HStack alignItems="center" justifyContent="space-between" paddingBottom={5}>
+            <VStack>
+                <Text fontSize="xl" fontWeight="bold" marginBottom={1}>
+                    {CustomerName}
+                </Text>
+                <Text color="#8D8D8D">Project Number: {CustomerId}</Text>
+            </VStack>
+
+            <Box
+                borderWidth={1}
+                borderColor="#E3E3E3"
+                borderRadius={6}
+                bgColor="#F1F1F1"
+                p={3}
+                width={10}
+                height={10}
+                alignItems="center"
+                justifyContent="center">
+                <Icon name="ellipsis-vertical" size={14} color="black"/>
+            </Box>
+        </HStack>
     );
 };
+
+const ContactDetails = ({PhoneNumber, EmailAddress}) => {
+    return (
+        <HStack  maxH={'45px'} w={'88%'} >
+            <HStack w={'30%'}  marginRight={12}>
+                <Box marginRight={2}>
+                    <Icon name="call" size={14} color="#8D8D8D"/>
+                </Box>
+                <Box>
+                    <Text color="#8D8D8D">
+                        {PhoneNumber}
+                    </Text>
+
+                </Box>
+            </HStack>
+            <HStack   w={'70%'} >
+                <Box marginRight={2} w={'8%'}>
+                    <Icon name="mail" size={14} color="#8D8D8D"/>
+                </Box>
+                <Box w={'92%'}>
+                    <Text color="#8D8D8D">
+                        {EmailAddress}
+                    </Text>
+                </Box>
+            </HStack>
+
+        </HStack>
+    );
+}
 
 const Detail = () => {
     return (
         <Box
+            p={3}
             mx={3}
             my={2}
             borderWidth={2}
             borderColor="#E3E3E3"
             borderRadius={5}
             bg="white">
-            <TopHeading/>
+            <TopHeading CustomerName={'HollyFox'} CustomerId={'215646465'}/>
+
+            <ContactDetails
+                PhoneNumber={'9844554622'}
+                EmailAddress={'thapasanish75@gmail.com'}/>
+            
+            <AddressSection Location1={'415 Washington AVE nepal,'} Location2={'kathmandu ,Nepal'}/>
+
+            <LevelColumn1 />
         </Box>
     );
 };

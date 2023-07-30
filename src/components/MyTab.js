@@ -14,10 +14,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 function MyTabButton({Icons, IconsName}) {
     return <Button
+    
     onPress={() => Alert.alert(IconsName)}
         style={{
         height: 41,
-        width: 110,
+        width: '50%',
         flexDirection: 'row'
     }}
         borderRadius={14}
@@ -41,10 +42,11 @@ function MyTabButton({Icons, IconsName}) {
 }
 
 export default function MyTab() {
-    return <VStack paddingY={1}>
+    return <VStack paddingY={1} paddingX={4}>
             <Box >
-                <HStack>
+                <HStack >
                     <Stack
+                     justifyContent={'center'} 
                         direction={{
                         base: "row"
                     }}
@@ -52,9 +54,9 @@ export default function MyTab() {
                         mx={{
                         base: "auto"
                     }}>
-                        <MyTabButton Icons={'checkmark-done'} IconsName={'USER'}/>
-                        <MyTabButton Icons={'reload'} IconsName={'CONTACT'}/>
-                        <MyTabButton  Icons ={'close'} IconsName={'SCHEDULE'}/>
+                        <MyTabButton Icons={'checkmark-done'} IconsName={'USER DETAIL'}/>
+                        <MyTabButton Icons={'reload'} IconsName={'CONNECTION'}/>
+                        {/* <MyTabButton  Icons ={'close'} IconsName={'SCHEDULE'}/> */}
                     </Stack>
                 </HStack>
             </Box>
