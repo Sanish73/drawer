@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Text, Box, VStack, HStack, ScrollView} from 'native-base';
+import {View, Text, Box, VStack, HStack , Popover, Button, FormControl, Input } from 'native-base';
+import {Alert, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AddressSection from './AddressSection';
 import LevelColumn1 from './LevelColumn1';
 
 const TopHeading = ({CustomerName, CustomerId}) => {
+    const handleTouchStart = () => {
+       
+        Alert.alert('preed');
+      };
+      
+    const initialFocusRef = React.useRef(null);
     return (
         <HStack alignItems="center" justifyContent="space-between" paddingBottom={5}>
             <VStack>
@@ -14,7 +21,9 @@ const TopHeading = ({CustomerName, CustomerId}) => {
                 <Text color="#8D8D8D">Project Number: {CustomerId}</Text>
             </VStack>
 
-            <Box
+          
+            <Popover initialFocusRef={initialFocusRef} trigger={triggerProps => {
+      return <Button  {...triggerProps}
                 borderWidth={1}
                 borderColor="#E3E3E3"
                 borderRadius={6}
@@ -25,7 +34,16 @@ const TopHeading = ({CustomerName, CustomerId}) => {
                 alignItems="center"
                 justifyContent="center">
                 <Icon name="ellipsis-vertical" size={14} color="black"/>
-            </Box>
+            </Button>;
+    }}>
+        <Popover.Content  width="40">
+          <Popover.Arrow />
+         
+          <Popover.Header onTouchStart={handleTouchStart}>Edit Details</Popover.Header>
+          
+        </Popover.Content>
+      </Popover>
+     
         </HStack>
     );
 };

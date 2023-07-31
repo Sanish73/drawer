@@ -22,15 +22,17 @@ import {
 import MyTab from '../components/MyTab';
 import SearchBox from '../components/SearchBox';
 import Detail from '../components/Detail';
+import GrideIcons from '../components/GrideIcons';
 
 export function CategoryScreen() {
     return (
         <VStack>
-           
+            <ScrollView>
                 <SearchBox/>
                 <MyTab/>
                 <Detail/>
-       
+                <GrideIcons/>
+            </ScrollView>
 
         </VStack>
     )
