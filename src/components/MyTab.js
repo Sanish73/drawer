@@ -25,12 +25,6 @@ function MyTabButton({Icons, IconsName}) {
         size="sm"
         backgroundColor={'white'}>
         <HStack justifyContent={'center'} alignItems={'center'}>
-            {/* <Icon
-                name={Icons}
-                style={{
-                color: 'green',
-                fontSize: 20
-            }}></Icon> */}
             <Text style={{
                 paddingHorizontal: 3
             }}>

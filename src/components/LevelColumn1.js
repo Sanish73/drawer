@@ -7,7 +7,7 @@ const LevelColumn1 = ({TypeName, TypeData,RevenueName,Total}) => {
         <HStack paddingY={1}>
             <VStack w={'50%'}>
                 <Box marginBottom={1}>
-                    <Text  fontSize="md" >{TypeName}</Text>
+                    <Text  fontSize="sm" >{TypeName}</Text>
                 </Box>
                 <Box 
                 paddingLeft={2}
@@ -31,7 +31,7 @@ const LevelColumn1 = ({TypeName, TypeData,RevenueName,Total}) => {
 
             <VStack w={'40%'} >
                 <Box marginBottom={1}>
-                    <Text fontSize="md" >{RevenueName}</Text>
+                    <Text fontSize="sm" >{RevenueName}</Text>
                 </Box>
                 <Box 
                 paddingLeft={2}

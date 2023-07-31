@@ -62,7 +62,7 @@ const TopHeading = ({CustomerName, CustomerId}) => {
 const ContactDetails = ({PhoneNumber, EmailAddress}) => {
     return (
         <HStack maxH={'45px'} w={'88%'}>
-            <HStack w={'30%'} marginRight={12}>
+            <HStack w={'30%'} marginRight={12} justifyContent={'center'} alignItems={'center'}>
                 <Box marginRight={2}>
                     <Icon name="call" size={14} color="#8D8D8D"/>
                 </Box>
@@ -73,7 +73,7 @@ const ContactDetails = ({PhoneNumber, EmailAddress}) => {
 
                 </Box>
             </HStack>
-            <HStack w={'70%'}>
+            <HStack w={'70%'}  justifyContent={'center'} alignItems={'center'}>
                 <Box marginRight={2} w={'8%'}>
                     <Icon name="mail" size={14} color="#8D8D8D"/>
                 </Box>
