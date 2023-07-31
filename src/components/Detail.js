@@ -1,16 +1,28 @@
 import React from 'react';
-import {View, Text, Box, VStack, HStack , Popover, Button, FormControl, Input } from 'native-base';
+import {
+    View,
+    Text,
+    Box,
+    VStack,
+    HStack,
+    Popover,
+    Button,
+    FormControl,
+    Input
+} from 'native-base';
 import {Alert, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AddressSection from './AddressSection';
 import LevelColumn1 from './LevelColumn1';
+import {useNavigation} from '@react-navigation/native';
+// import EditDetails from './EditDetails';
 
 const TopHeading = ({CustomerName, CustomerId}) => {
+    const navigation = useNavigation();
     const handleTouchStart = () => {
-       
-        Alert.alert('preed');
-      };
-      
+        navigation.navigate('EditDetails');
+    };
+
     const initialFocusRef = React.useRef(null);
     return (
         <HStack alignItems="center" justifyContent="space-between" paddingBottom={5}>
@@ -21,29 +33,29 @@ const TopHeading = ({CustomerName, CustomerId}) => {
                 <Text color="#8D8D8D">Project Number: {CustomerId}</Text>
             </VStack>
 
-          
-            <Popover initialFocusRef={initialFocusRef} trigger={triggerProps => {
-      return <Button  {...triggerProps}
-                borderWidth={1}
-                borderColor="#E3E3E3"
-                borderRadius={6}
-                bgColor="#F1F1F1"
-                p={3}
-                width={10}
-                height={10}
-                alignItems="center"
-                justifyContent="center">
-                <Icon name="ellipsis-vertical" size={14} color="black"/>
-            </Button>;
-    }}>
-        <Popover.Content  width="40">
-          <Popover.Arrow />
-         
-          <Popover.Header onTouchStart={handleTouchStart}>Edit Details</Popover.Header>
-          
-        </Popover.Content>
-      </Popover>
-     
+            <Popover
+                initialFocusRef={initialFocusRef}
+                trigger={triggerProps => {
+                return <Button
+                    {...triggerProps}
+                    borderWidth={1}
+                    borderColor="#E3E3E3"
+                    borderRadius={6}
+                    bgColor="#F1F1F1"
+                    p={3}
+                    width={10}
+                    height={10}
+                    alignItems="center"
+                    justifyContent="center">
+                    <Icon name="ellipsis-vertical" size={14} color="black"/>
+                </Button>;
+            }}>
+                <Popover.Content width="40">
+                    <Popover.Arrow/>
+                    <Popover.Body onTouchStart={handleTouchStart}>Edit Details</Popover.Body>
+                </Popover.Content>
+            </Popover>
+
         </HStack>
     );
 };
@@ -79,7 +91,7 @@ const ContactDetails = ({PhoneNumber, EmailAddress}) => {
 
 const Detail = () => {
     return (
-      
+
         <Box
             p={3}
             mx={3}
@@ -109,7 +121,7 @@ const Detail = () => {
                 RevenueName={'Est Revenue'}
                 Total={'$125,654,00.000'}/>
         </Box>
-       
+
     );
 };
 

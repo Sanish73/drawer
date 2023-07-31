@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RootScreen from './screen/RootScreen';
 // import { StyleSheet } from 'react-native';
 import {StyleSheet, SafeAreaView, View, Text } from 'react-native';
+import EditDetails from './components/EditDetails';
 
 
 
@@ -18,6 +19,7 @@ function AppBox() {
         }}
       >
         <Stack.Screen name="Root" component={RootScreen} />
+        <Stack.Screen name="EditDetails" component={EditDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
