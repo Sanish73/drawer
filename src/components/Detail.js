@@ -15,7 +15,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import AddressSection from './AddressSection';
 import LevelColumn1 from './LevelColumn1';
 import {useNavigation} from '@react-navigation/native';
-// import EditDetails from './EditDetails';
 
 const TopHeading = ({CustomerName, CustomerId}) => {
     const navigation = useNavigation();
