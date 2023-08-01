@@ -1,6 +1,13 @@
-import {View} from 'react-native'
+import {Alert, View} from 'react-native'
 import React from 'react'
-import {Box, HStack, Input, Text, VStack} from 'native-base'
+import {
+    Box,
+    HStack,
+    Input,
+    Text,
+    VStack,
+    Button
+} from 'native-base'
 
 const FirstSection = ({Heading, placeholder}) => {
     return (
@@ -17,7 +24,7 @@ const FirstSection = ({Heading, placeholder}) => {
     );
 }
 
-const SecondSection = ({FirstHeading, SecondHeading ,FirstPlaceHolder ,SecondPlaceHolder}) => {
+const SecondSection = ({FirstHeading, SecondHeading, FirstPlaceHolder, SecondPlaceHolder}) => {
     return (
         <HStack paddingY={2}>
             <VStack width={'47%'}>
@@ -33,7 +40,7 @@ const SecondSection = ({FirstHeading, SecondHeading ,FirstPlaceHolder ,SecondPla
 
             <VStack width={'47%'}>
                 <Text marginBottom={2}>
-                {SecondHeading}
+                    {SecondHeading}
                 </Text>
                 <Box>
                     <Input variant="outline" placeholder={SecondPlaceHolder}/>
@@ -44,11 +51,24 @@ const SecondSection = ({FirstHeading, SecondHeading ,FirstPlaceHolder ,SecondPla
 }
 
 const EditDetails = () => {
+
+    const UpdatePressed =()=>{
+        return(
+            Alert.alert('hi')
+        );
+    }
     return (
         <VStack p={3} mx={3} my={2}>
             <FirstSection Heading={'Time Type'} placeholder={'Regular'}/>
-            <SecondSection FirstHeading={'Project'} SecondHeading={'Task'} FirstPlaceHolder={'SelectOne'}  SecondPlaceHolder={'SelectOne'}/>
+            <SecondSection
+                FirstHeading={'Project'}
+                SecondHeading={'Task'}
+                FirstPlaceHolder={'SelectOne'}
+                SecondPlaceHolder={'SelectOne'}/>
 
+            <Box paddingY={3}>
+                <Button onPress={UpdatePressed}>Update</Button>
+            </Box>
         </VStack>
     )
 }
